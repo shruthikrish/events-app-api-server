@@ -1,0 +1,32 @@
+{
+  "name": "ce-sample-api-server",
+  "description": "CE Sample Backend using NodeJS as an api server.",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./src/server.js",
+    "start:demos": "GOOGLE_CLOUD_PROJECT=gcp-demos-2020 node ./src/server.js",
+    "start:mock": "TESTING=true node ./src/server.js",
+    "start:dev": "GOOGLE_CLOUD_PROJECT=gcp-demos-2020 KEY_FILE_NAME=./secrets/gcp-demos-2020-eb17e5a6ee44.json node ./src/server.js",
+    "test": "TESTING=true nyc mocha ./src/**/*.test.js --exit "
+  },
+  "dependencies": {
+    "@google-cloud/firestore": "^4.9.7",
+    "cookie-parser": "^1.4.5",
+    "debug": "^4.3.1",
+    "express": "^4.17.1",
+    "http-errors": "^1.8.0",
+    "morgan": "^1.10.0",
+    "nocache": "^2.1.0"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.2.15",
+    "@types/express": "^4.17.11",
+    "@types/mocha": "^8.2.1",
+    "@types/morgan": "^1.9.2",
+    "chai": "^4.3.3",
+    "chai-http": "^4.3.0",
+    "mocha": "^8.1.1",
+    "nyc": "^15.1.0"
+  }
+}
